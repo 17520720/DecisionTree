@@ -1,0 +1,130 @@
+﻿<Window x:Class="DecisionTree.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DecisionTree"
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        mc:Ignorable="d"
+        Title="Decision Tree"  Height="600" Width="900">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/bg.jpg">
+
+        </ImageBrush>
+    </Window.Background>
+    <Grid x:Name="gridLayout">
+        <DockPanel LastChildFill="False" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                   PreviewMouseLeftButtonDown="DockPanel_PreviewMouseLeftButtonDown">
+
+            <!--This is the Close button-->
+            <Grid DockPanel.Dock="Right" Width="36" Cursor="Hand"
+                  PreviewMouseDown="Grid_PreviewMouseDown">
+                <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/x.png"
+                       Margin="0 0 0 0" Width="12" Cursor="Hand">
+
+                </Image>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Background" Value="Transparent"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Grid.IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="SeaGreen"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+            </Grid>
+
+            <!--This is the Minimize button-->
+            <Grid DockPanel.Dock="Right" Width="36" Cursor="Hand"
+                  PreviewMouseDown="Grid_PreviewMouseDown_1">
+                <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="Images/-.png"
+                       Margin="0 0 0 0" Width="12" Cursor="Hand">
+
+                </Image>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Background" Value="Transparent"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Grid.IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="SkyBlue"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+            </Grid>
+        </DockPanel>
+        
+        <TextBlock  Text="Input" TextAlignment="left" FontFamily="Segoe UI"  FontSize="18" Foreground="#ffffffff" 
+                    Margin="318,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Button x:Name="btnChooseFile" Content="Chọn file" FontWeight="SemiBold" FontSize="16"
+                HorizontalAlignment="Left" Margin="385,26,0,0" Padding="12 0 12 0" VerticalAlignment="Top" 
+                Height="36" Width="121"
+                Cursor="Hand" Click="btnChooseFile_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <Button x:Name="btnCreate" Content="Tạo cây" FontWeight="SemiBold" FontSize="16"
+                HorizontalAlignment="Left" Margin="520,26,0,0" Padding="12 0 12 0" VerticalAlignment="Top" 
+                Height="36" IsEnabled="False"
+                Cursor="Hand" Click="btnCreate_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--<Border  Width="593" Height="69" Background="#dbffffff" BorderBrush="#ff707070" 
+                 Margin="307,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                 CornerRadius="50 0 0 0">
+
+        </Border>-->
+        <!--<TextBlock  Text="Bước kế tiếp" TextAlignment="left" FontFamily="Segoe UI"  FontSize="20" 
+                    Foreground="#5e000000" x:Name="txtblockNextStep"
+                    Margin="770,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                    Cursor="Hand" PreviewMouseDown="txtblockNextStep_PreviewMouseDown"/>
+
+        <TextBlock  Text="Thủ công" TextAlignment="left" FontFamily="Segoe UI"  FontSize="20" 
+                    Foreground="#ff000000" x:Name="txtblockHand"
+                    Margin="590,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                    Cursor="Hand" PreviewMouseDown="txtHand_PreviewMouseDown"/>
+
+        <TextBlock  Text="Tự động" TextAlignment="left" FontFamily="Segoe UI"  FontSize="20" 
+                    Foreground="#ff45d124" x:Name="txtblockAuto"
+                    Margin="393,0,0,36" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                    Cursor="Hand" PreviewMouseDown="txtAuto_PreviewMouseDown"/>-->
+
+
+        <TextBlock  Text="Output:" TextAlignment="left" FontFamily="Segoe UI"  FontSize="20" 
+                    Foreground="Transparent" 
+                    Margin="393,0,0,5" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+
+        <Label  Content="{Binding OutputState}" FontFamily="Segoe UI"  FontSize="16" 
+                    Foreground="Transparent" x:Name="lbOutput"
+
+                    Margin="469,0,0,1" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <!--<TextBox x:Name="txtboxDelayTime" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                 FontSize="16" Background="Transparent"
+                 Margin="472,0,0,36" TextWrapping="Wrap" Text="3"  Width="38"  Height="23"
+                 BorderBrush="SeaGreen"
+                 PreviewTextInput="txtboxDelayTime_PreviewTextInput"
+                 />-->
+        <Button x:Name="btnResult" Content="Kết quả" FontWeight="SemiBold" FontSize="16"
+            HorizontalAlignment="Left" Margin="618,26,0,0" Padding="12 0 12 0" VerticalAlignment="Top" 
+            Height="36" Width="121" IsEnabled="False"
+            Cursor="Hand" Click="btnResult_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

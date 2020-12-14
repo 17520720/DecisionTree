@@ -1,0 +1,18 @@
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\DecisionTree.csprojAssemblyReference.cache
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\App.g.cs
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\MainWindow.baml
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\DecisionTree.Properties.Resources.resources
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\DecisionTree.csproj.GenerateResource.cache
+D:\Projects\C#\DecisionTree\DecisionTree\bin\Debug\Decision Tree.exe.config
+D:\Projects\C#\DecisionTree\DecisionTree\bin\Debug\Decision Tree.exe
+D:\Projects\C#\DecisionTree\DecisionTree\bin\Debug\Decision Tree.pdb
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\Decision Tree_MarkupCompile.cache
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\Decision Tree_MarkupCompile.lref
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\Decision Tree.g.resources
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\Decision Tree.exe
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\Decision Tree.pdb
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\DecisionTree.csproj.ResolveComReference.cache
+D:\Projects\C#\DecisionTree\DecisionTree\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\C#\DecisionTree\DecisionTree\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\C#\DecisionTree\DecisionTree\obj\Debug\DecisionTree.csproj.CopyComplete
